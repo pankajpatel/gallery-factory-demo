@@ -16,14 +16,17 @@ document.getElementById("app").innerHTML = `
 <div class="second-gallery">Put second gallery here</div>
 `;
 
-const gallery = generateGallery(images);
-console.log(gallery);
-
 const galleryPlaceholders = {
   first: document.querySelector(".first-gallery"),
   second: document.querySelector(".second-gallery")
 };
-document.cloneNode();
+
+const clone = galleryPlaceholders.first.cloneNode();
+
+console.log(generateGallery(images));
+
+const gallery = generateGallery(images, null, clone);
+console.log(gallery);
 
 const gallery1 = generateGallery(images, null, galleryPlaceholders.second);
 console.log(gallery1);
